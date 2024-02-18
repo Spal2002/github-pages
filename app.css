@@ -1,39 +1,28 @@
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 190px;
 }
 
-.page {
-  display: grid;
-  min-height: 100vh;
-}
-.page__text {
-  margin: auto;
-}
-
-.text {
-  position: relative;
-  font-size: clamp(4rem, 7vw, 8rem);
-}
-.text::before {
-  animation-name: anim;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  color: red;
-  position: absolute;
-  top: 0;
-  left: -2px;
-  width: 0;
-  overflow: hidden;
-  content: attr(data-text);
-}
-
-@keyframes anim {
-  50%, 80% {
-    width: 100%;
+@keyframes textclip {
+  to {
+    background-position: 200% center;
   }
 }
